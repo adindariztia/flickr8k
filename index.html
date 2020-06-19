@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    
+    
+    <link rel="stylesheet" href="css/caption.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Image Caption Generator</title>
+</head>
+<style>
+    .pred-container {
+        margin-bottom: 20px;
+    }
+
+    .pred-container>div {
+        display: inline-block;
+        margin-right: 20px;
+        vertical-align: top;
+    }
+
+    .row {
+        display: table-row;
+    }
+
+    .cell {
+        display: table-cell;
+        padding-right: 20px;
+    }
+
+    #file-container {
+        margin-bottom: 20px;
+    }
+</style>
+
+<body>
+    <div class="tfjs-example-container container">
+        <section class='title-area'>
+            <u><h1><img class="img-fluid pr-3" src="caracal.png" height="50px" width="50px">Image Captioning in Browser</h1></u>
+        </section>
+    
+        <section>
+            <p class='section-head'>Description</p>
+            <p>
+                A Image-to-text generator built on CNN and LSTM Machine Learning model.
+                We use Flickr8K Dataset to train our model and Inception V3 for feature extraction.
+                <br>
+                <br>
+                Note: please wait until model succesfully loaded before uploading and captioning the image.
+            </p>
+        </section>
+    <section>
+    <p class='section-head'>Caption Generator</p>
+    
+    </section>
+
+    <section>
+        <div class="card text-center bg-dark">
+            <div class="card-header">
+                <div id="txt">Loading Model ... </div>
+                <div class="text-center" id="spinner">
+                    <div class="spinner-border" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                  </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Upload Your Picture Here</h5>
+              <p class="card-text">Click choose file to upload your picture, then click 'Generate Caption' below to witness the magic<img  class="inline-block" src="wizard.png" height="20px" width="20px"class="img-fluid" alt="Responsive image"></p>
+              <div>
+                <input type="file" id="imageLoader" name="imageLoader" />
+              </div>
+              <img class="img-fluid p-3 block" src="" id="image" width="400">
+              <div class="p-2">
+                <button class="btn block" type="button" id="btn">Generate Caption                     
+                </button>
+                
+                
+              </div>
+              
+              
+            </div>
+            <div class="card-footer text-muted">
+                <div id="caption-div">
+                    <h4>Caption: </h4>
+                    <div id="caption"></div>
+                    <div id="spinner-caption" class="d-inline-block" style="width: 5px; height: 5px;">
+                        <span class="spinner-grow spinner-border-sm" role="status" aria-hidden="true"></span>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"></script>
+    <script src="model/word2idx.js"></script>
+    <script src="model/idx2word.js"></script>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- link to js file -->
+    <script src="js/caption.js"></script>
+</body>
+</html>
